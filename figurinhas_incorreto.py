@@ -22,15 +22,11 @@ pacotes_comprados = math.floor(dinheiro/custo_figurinha)
 gasto = pacotes_comprados*custo_figurinha
 
 aux = 0
-contagem_moedas = 0
 moedas_usadas = 0
 
 while gasto > 0:
     moedas_usadas = math.ceil(gasto / val_moedas[aux])
-    if moedas_usadas == moedas[aux]:
-        gasto = 0
-        moedas[aux] = 0
-    elif moedas_usadas < moedas[aux]:
+    if moedas_usadas < moedas[aux]:
         moedas[aux] = moedas[aux] - moedas_usadas
         gasto = 0
     else:
